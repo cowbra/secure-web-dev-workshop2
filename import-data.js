@@ -1,9 +1,8 @@
-
+//https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose
 const  mongoose = require('mongoose')
 
 require('dotenv').config()
-//console.log(process.env.MONGO_URI)
-mongoose.connect(process.env.MONGO_URI);
+
 
 
 //import mongoose from 'mongoose';
@@ -32,7 +31,29 @@ const Locations = new Schema({
     year: String
 });
 
-const LocationModel = mongoose.model('LocationModel',Locations)
+const LocationModel = mongoose.model('Location',Locations)
 module.exports = LocationModel;
 
-mongoose.connection.close();
+
+
+
+function importFilmingLocationInMongo(){
+    for(let)
+
+}
+
+async function main(){
+    const connected = await mongoose.connect(process.env.MONGO_URI);
+    console.log(connected);
+
+    const horrorMovie = new LocationModel({filmType:'horror'});
+    await horrorMovie.save();
+    await mongoose.connection.close();
+}
+
+
+
+main()
+
+/*
+new Model({fgfg})
